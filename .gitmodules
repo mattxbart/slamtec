@@ -1,0 +1,3 @@
+[submodule "RPLidar"]
+	path = RPLidar
+	url = https://github.com/Roboticia/RPLidar
