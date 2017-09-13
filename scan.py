@@ -4,23 +4,29 @@ import numpy as np
 from rplidar import RPLidar
 import time
 PORT_NAME = 'COM3'
+import os
 
-def run(DURATION):
+def run(DURATION, FILENAME):
     lidar = RPLidar(PORT_NAME)
-    lidar.reset()
+    time.sleep(.5)
     timeout = time.time() + DURATION  # in seconds
-    print('Recording measurments...')
-
-    data = open(r'C:\Users\mbartolome\PycharmProjects\slamtec\scan.txt', 'ab')
+    if os.path.exists(FILENAME):
+        os.remove(FILENAME)
+    data = open(FILENAME, 'ab')
     while True:
-        test = 0
+        t = 0
+        count = 0
         for scan in lidar.iter_scans():
+            count += 1
             np.savetxt(data, np.array(scan))
-            if test == 5 or time.time() > timeout:
+            if t == DURATION or time.time() > timeout:
                 break
-            test = test - 1
+            t = t - 1
+
         break
     lidar.disconnect()
+    #print statement required to capture value for vba shell
+    print(count)
 
 
 if __name__ == '__main__':

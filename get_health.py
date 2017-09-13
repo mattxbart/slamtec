@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
 from rplidar import RPLidar
+import time
 
 PORT_NAME = 'COM3'
 
-def run(MOTOR_PWM):
+def run():
     lidar = RPLidar(PORT_NAME)
-    lidar._motor_speed = MOTOR_PWM
-    lidar.start_motor()
+    time.sleep(.5)
+    status, code = lidar.get_health()
     lidar.disconnect()
+    print(status)
 
 if __name__ == '__main__':
-    run(int(sys.argv[1]))
+    run()
