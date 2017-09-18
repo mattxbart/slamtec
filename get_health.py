@@ -2,7 +2,7 @@
 from rplidar import RPLidar
 import time
 
-PORT_NAME = 'COM3'
+from settings import PORT_NAME
 
 def run():
     lidar = RPLidar(PORT_NAME)

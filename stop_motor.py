@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 from rplidar import RPLidar
 
-PORT_NAME = 'COM3'
+from settings import PORT_NAME
 
 def run():
     lidar = RPLidar(PORT_NAME)

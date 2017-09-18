@@ -3,7 +3,7 @@ import sys
 import numpy as np
 from rplidar import RPLidar
 import time
-PORT_NAME = 'COM4'
+from settings import PORT_NAME
 import os
 
 def run(DURATION, FILENAME):

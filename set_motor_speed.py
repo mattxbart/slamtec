@@ -2,7 +2,7 @@
 from rplidar import RPLidar
 import sys
 
-PORT_NAME = 'COM3'
+from settings import PORT_NAME
 
 def run(MOTOR_PWM):
     lidar = RPLidar(PORT_NAME)
