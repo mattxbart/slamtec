@@ -30,4 +30,4 @@ def run(DURATION, FILENAME):
 
 
 if __name__ == '__main__':
-    run(int(sys.argv[1]))
+    run(int(sys.argv[1]), sys.argv[2])
