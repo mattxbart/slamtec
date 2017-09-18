@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 from rplidar import RPLidar
+import sys
 
 PORT_NAME = 'COM3'
 
