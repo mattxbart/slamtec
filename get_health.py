@@ -2,12 +2,13 @@
 from rplidar import RPLidar
 import time
 
-from settings import PORT_NAME
+from settings import *
 
 def run():
     lidar = RPLidar(PORT_NAME)
-    time.sleep(.5)
+    time.sleep(WAIT)
     status, code = lidar.get_health()
+    time.sleep(WAIT)
     lidar.disconnect()
     print(status)
 

@@ -1,1 +1,3 @@
 PORT_NAME = 'COM3'
+
+WAIT = 1

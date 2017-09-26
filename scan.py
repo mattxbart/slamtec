@@ -3,12 +3,14 @@ import sys
 import numpy as np
 from rplidar import RPLidar
 import time
-from settings import PORT_NAME
+from settings import *
 import os
 
 def run(DURATION, FILENAME):
     lidar = RPLidar(PORT_NAME)
-    time.sleep(.5)
+    time.sleep(WAIT)
+    lidar.reset()
+    time.sleep(WAIT)
     timeout = time.time() + DURATION  # in seconds
     if os.path.exists(FILENAME):
         os.remove(FILENAME)
