@@ -10,6 +10,7 @@ def run(MOTOR_PWM):
     lidar.reset()
     time.sleep(WAIT)
     lidar._motor_speed = MOTOR_PWM
+    time.sleep(WAIT)
     lidar.start_motor()
     time.sleep(WAIT)
     lidar.disconnect()
